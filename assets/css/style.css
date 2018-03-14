@@ -1,0 +1,34 @@
+@font-face {
+	font-family: batmanbeat;
+	src: url(../fonts/BATMAN.TTF) format("truetype");
+}
+
+@font-face {
+	font-family: riffic;
+	src: url(../fonts/RifficFree-bold.ttf) format("truetype");
+}
+
+.quizTitle {
+	font-family: batmanbeat;
+	color: #495dee;
+	font-weight: bold;
+}
+
+body {
+	background-image: url(../images/party_background.png);
+}
+
+#quizBody {
+	background-color: #84caa0;
+	font-family: riffic;
+}
+
+form {
+	text-align: center;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+	font-size: 25px;
+	margin: 15px;
+	color: black;
+}
