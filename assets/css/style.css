@@ -1,26 +1,27 @@
-@font-face {
+/*@font-face {
 	font-family: batmanbeat;
 	src: url(../fonts/BATMAN.TTF) format("truetype");
-}
+}*/
 
 @font-face {
 	font-family: riffic;
 	src: url(../fonts/RifficFree-bold.ttf) format("truetype");
 }
 
-.quizTitle {
+#quizTitle {
 	font-family: batmanbeat;
 	color: #495dee;
 	font-weight: bold;
+	font-size: 50px;
 }
 
 body {
 	background-image: url(../images/party_background.png);
+	font-family: riffic;
 }
 
 #quizBody {
 	background-color: #84caa0;
-	font-family: riffic;
 }
 
 form {
@@ -31,4 +32,8 @@ form {
 	font-size: 25px;
 	margin: 15px;
 	color: black;
+}
+
+#questionImage {
+	max-width: 250px;
 }

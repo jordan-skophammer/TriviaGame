@@ -5,51 +5,50 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
-	<title>Quiz Game</title>
+	<title>The Brain Melting Quiz Challenge</title>
 </head>
 <body>
 	
 	<main class="container">
-		<section class="row center-align">
+		<section id="quizTitle" class="row center-align">
 			<head class="col m12">
-				<h1 class="quizTitle">[The] [Brain] [Melting]<br><br>
-				[Quiz] [Challenge]</h1>	
+				The Brain Melting Quiz Challenge	
 			</head>
 		</section>
 
 		<section id="quizBody" class="row center-align">
 			<section class="row">
 				<head class="col m12">
-					<h3>Time Remaining: <div id="timer"></div> Seconds</h3>
+					<h4>Time Remaining: <div id="timer"></div> Seconds</h4>
 				</head>
 				<br>
 				<body class="col m12">
-					<div id="questionBody"></div><!-- <h4>What was the pervious name of NBA All of Famer Kareen Abdul Jabar?</h4> -->
+					<h3><div id="questionBody"></div><!-- <h4>What was the pervious name of NBA All of Famer Kareen Abdul Jabar?</h4> --></h3>
 				</body>
 			</section>
 			<br>
 			<section class="row">
 				<form class="col m12" action="#">
 				
-					<input class="with-gap" type="radio" id="question1" />
-					<label for="question1">Answer_1</label>
+					<input class="with-gap" type="radio" id="answer1" />
+					<label id="A" for="answer1">Answer_1</label>
 					
 				
-					<input class="with-gap" type="radio" id="question2" />
-					<label for="question2">Answer_2</label>
+					<input class="with-gap" type="radio" id="answer2" />
+					<label id="B" for="answer2">Answer_2</label>
 					
 				
-					<input class="with-gap" type="radio" id="question3" />
-					<label for="question3">Answer_3</label>
+					<input class="with-gap" type="radio" id="answer3" />
+					<label id="C" for="answer3">Answer_3</label>
 					
 				
-					<input class="with-gap" type="radio" id="question4" />
-					<label for="question4">Answer_100</label>
+					<input class="with-gap" type="radio" id="answer4" />
+					<label id="D" for="answer4">Answer_4</label>
 					
 				</form>
 			</section>
 			<section class="row">
-				<img src="./assets/images/Kareem-abdul-jabbar-goggles.jpg">
+				<img id="questionImage">
 			</section>
 		</section>
 	
