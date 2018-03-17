@@ -1,50 +1,108 @@
 $(document).ready(function(){
-	// var questionOne = "How many islands make up Japan?";
-	// var questionTwo = "";
-	// var questionThree = "";
-	// var questionFour = "";
-	// var questionFive = "";
+
+	var timer = 15;
+	var correctPoints = 0;
+	var missedPoints = 0;
+	var qBank = [
+		questionOne = {
+			q1: 'How many islands make up Japan?',
+			answers: ["4", "33", "108", "6852"],
+			key: "6852"
+		},
+
+		questionTwo = {
+			q2 : 'How many squares are on a Monopoly board?',
+			answers: ["10", "40", "48", "32"],
+			key: "40"
+		},
+
+		questionThree = {
+			q3: "What is the world's longest river?",
+			answers: ["Nile", "Mississippi", "Amazon", "Yangtze"],
+			key: "Amazon"
+		},
+
+		questionFour = {
+			q3: "How many pints of blood does the average humand body contain?",
+			answers: ["5", "9", "12", "15"],
+			key: "9"
+		}
+	];
+
+	var imageArray = new Array();
+
+	imageArray[0] = new Image();
+	imageArray[0].src = '../assets/images/japan_map_base.png';
+
+	imageArray[1] = new Image();
+	imageArray[1].src = '../assets/images/monoploy.jpg';
+
+	imageArray[2] = new Image();
+	imageArray[2].src = '../assets/images/river.jpg';
+
+	imageArray[3] = new Image();
+	imageArray[3].src = '../assets/images/blood.jp'
 
 	function setTimer(){
-		var i = 30;
-		var countDown = setInterval(function() {
-		    $('#timer').text(i);
 
-		    if (i === 0) {
+		var countDown = setInterval(function() {
+		    $('#timer').text(timer);
+
+		    if (timer === 0) {
 		        clearInterval(countDown);
-		        $('#timer').text("TIME'S UP!");
+		        $('#timer').text(timer);
+		        alert('TIME IS UP!!!')
 		    }
 		    else {
-		        i--;
+		        timer--;
 		    }
-		}, 1000)
+		}, 1000);
 	};
 
-	setTimer();
+	function answerListener() {
+		$('#answer1').click(function() {
+			checkAnswer(0);
+		})
 
-	function questionOne() {
+		$('#answer2').click(function() {
+			checkAnswer(1);
+		})
 
-		var answersOne = {
-			A : "4",
-			B : "33",
-			C : "108",
-			D : "6852"
-		};
+		$('#answer3').click(function() {
+			checkAnswer(2);
+		})
 
-		var questionOneAnswer = answersOne.D;
+		$('#answer4').click(function() {
+			checkAnswer(3);
+		})
+	};
 
-		$('#questionBody').text('How many islands make up Japan?');
-		$('#A').text(answersOne.A);
-		$('#B').text(answersOne.B);
-		$('#C').text(answersOne.C);
-		$('#D').text(answersOne.D);
-		$('#questionImage').attr('src', './assets/images/japan_map_base.png')
-
+	function checkAnswer(n) {
+		if (questionOne.answers[n] === questionOne.key) {
+			alert('CORRECT!!!');
+			correctPoints++;
+		} else {
+			alert('INCORRECT!!!');
+			missedPoints++;
+		}
 	}
 
-	questionOne();
-	
+	function displayOne() {
 
+		$('#questionBody').text(questionOne.q1);
+		$('#A').text(questionOne.answers[0]);
+		$('#B').text(questionOne.answers[1]);
+		$('#C').text(questionOne.answers[2]);
+		$('#D').text(questionOne.answers[3]);
+		$('#questionImage').attr('src', './assets/images/japan_map_base.png');
+
+		setTimer(); 
+		answerListener();
+	}
+
+	displayOne();
+	
+	
 	
 });
 
