@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var timer = 15;
+	var i = 0;
 	var correctPoints = 0;
 	var missedPoints = 0;
 	var qBank = [
@@ -23,25 +24,11 @@ $(document).ready(function(){
 		},
 
 		questionFour = {
-			q3: "How many pints of blood does the average humand body contain?",
+			q4: "How many pints of blood does the average humand body contain?",
 			answers: ["5", "9", "12", "15"],
 			key: "9"
 		}
 	];
-
-	var imageArray = new Array();
-
-	imageArray[0] = new Image();
-	imageArray[0].src = '../assets/images/japan_map_base.png';
-
-	imageArray[1] = new Image();
-	imageArray[1].src = '../assets/images/monoploy.jpg';
-
-	imageArray[2] = new Image();
-	imageArray[2].src = '../assets/images/river.jpg';
-
-	imageArray[3] = new Image();
-	imageArray[3].src = '../assets/images/blood.jp'
 
 	function setTimer(){
 
@@ -49,9 +36,12 @@ $(document).ready(function(){
 		    $('#timer').text(timer);
 
 		    if (timer === 0) {
-		        clearInterval(countDown);
+		        // clearInterval(countDown);
 		        $('#timer').text(timer);
-		        alert('TIME IS UP!!!')
+		        alert('TIME IS UP!!!');
+		        i++;
+		        displayArray[i]();
+		        timer = 15;
 		    }
 		    else {
 		        timer--;
@@ -81,29 +71,70 @@ $(document).ready(function(){
 		if (questionOne.answers[n] === questionOne.key) {
 			alert('CORRECT!!!');
 			correctPoints++;
+			i++
+			displayArray[i]()
+			timer = 15;
+
 		} else {
 			alert('INCORRECT!!!');
 			missedPoints++;
+			i++
+			displayArray[i]()
+			timer = 15;
 		}
 	}
 
-	function displayOne() {
+	var displayArray = [
 
-		$('#questionBody').text(questionOne.q1);
-		$('#A').text(questionOne.answers[0]);
-		$('#B').text(questionOne.answers[1]);
-		$('#C').text(questionOne.answers[2]);
-		$('#D').text(questionOne.answers[3]);
-		$('#questionImage').attr('src', './assets/images/japan_map_base.png');
+		function displayOne() {
 
-		setTimer(); 
-		answerListener();
-	}
+			$('#questionBody').text(qBank[0].q1);
+			$('#A').text(qBank[0].answers[0]);
+			$('#B').text(qBank[0].answers[1]);
+			$('#C').text(qBank[0].answers[2]);
+			$('#D').text(qBank[0].answers[3]);
+			$('#questionImage').attr('src', './assets/images/japan.png');
 
-	displayOne();
+			answerListener();
+		},
+
+		function displayTwo() {
+
+			$('#questionBody').text(qBank[1].q2);
+			$('#A').text(qBank[1].answers[0]);
+			$('#B').text(qBank[1].answers[1]);
+			$('#C').text(qBank[1].answers[2]);
+			$('#D').text(qBank[1].answers[3]);
+			$('#questionImage').attr('src', './assets/images/monoploy.jpg');
+
+			answerListener();
+		},
+
+		function displayThree() {
+			$('#questionBody').text(qBank[2].q3);
+			$('#A').text(qBank[2].answers[0]);
+			$('#B').text(qBank[2].answers[1]);
+			$('#C').text(qBank[2].answers[2]);
+			$('#D').text(qBank[2].answers[3]);
+			$('#questionImage').attr('src', './assets/images/river.jpg');
+
+			answerListener();
+		},
+
+		function displayFour() {
+			$('#questionBody').text(qBank[3].q4);
+			$('#A').text(qBank[3].answers[0]);
+			$('#B').text(qBank[3].answers[1]);
+			$('#C').text(qBank[3].answers[2]);
+			$('#D').text(qBank[3].answers[3]);
+			$('#questionImage').attr('src', './assets/images/blood.jpg');
+
+			answerListener();
+		}
+	];
 	
-	
-	
+	displayArray[i]();
+	setTimer();
 });
 
 
