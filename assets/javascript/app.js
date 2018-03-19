@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 		questionFour = {
 			q4: "How many pints of blood does the average humand body contain?",
-			answers: ["5", "9", "12", "15"],
+			answers: ["9", "5", "12", "15"],
 			key: "9"
 		}
 	];
@@ -67,6 +67,10 @@ $(document).ready(function(){
 		})
 	};
 
+	function clearButtons() {
+		$('#answer1').off("click");
+	}
+
 	function checkAnswer(n) {
 		if (questionOne.answers[n] === questionOne.key) {
 			alert('CORRECT!!!');
@@ -74,7 +78,6 @@ $(document).ready(function(){
 			i++
 			displayArray[i]()
 			timer = 15;
-
 		} else {
 			alert('INCORRECT!!!');
 			missedPoints++;
@@ -84,57 +87,59 @@ $(document).ready(function(){
 		}
 	}
 
+	function scoreBoard() {
+
+	$('#displayCorrect').text(correctPoints);
+	$('#displayIncorrect').text(missedPoints);
+
+	}
+
 	var displayArray = [
 
 		function displayOne() {
 
 			$('#questionBody').text(qBank[0].q1);
-			$('#A').text(qBank[0].answers[0]);
-			$('#B').text(qBank[0].answers[1]);
-			$('#C').text(qBank[0].answers[2]);
-			$('#D').text(qBank[0].answers[3]);
+			$('#answer1').text(qBank[0].answers[0]);
+			$('#answer2').text(qBank[0].answers[1]);
+			$('#answer3').text(qBank[0].answers[2]);
+			$('#answer4').text(qBank[0].answers[3]);
 			$('#questionImage').attr('src', './assets/images/japan.png');
-
-			answerListener();
 		},
 
 		function displayTwo() {
 
-			$('#questionBody').text(qBank[1].q2);
-			$('#A').text(qBank[1].answers[0]);
-			$('#B').text(qBank[1].answers[1]);
-			$('#C').text(qBank[1].answers[2]);
-			$('#D').text(qBank[1].answers[3]);
-			$('#questionImage').attr('src', './assets/images/monoploy.jpg');
 
-			answerListener();
+			$('#questionBody').text(qBank[1].q2);
+			$('#answer1').text(qBank[1].answers[0]);
+			$('#answer2').text(qBank[1].answers[1]);
+			$('#answer3').text(qBank[1].answers[2]);
+			$('#answer4').text(qBank[1].answers[3]);
+			$('#questionImage').attr('src', './assets/images/monoploy.jpg');
 		},
 
 		function displayThree() {
 			$('#questionBody').text(qBank[2].q3);
-			$('#A').text(qBank[2].answers[0]);
-			$('#B').text(qBank[2].answers[1]);
-			$('#C').text(qBank[2].answers[2]);
-			$('#D').text(qBank[2].answers[3]);
+			$('#answer1').text(qBank[2].answers[0]);
+			$('#answer2').text(qBank[2].answers[1]);
+			$('#answer3').text(qBank[2].answers[2]);
+			$('#answer4').text(qBank[2].answers[3]);
 			$('#questionImage').attr('src', './assets/images/river.jpg');
-
-			answerListener();
 		},
 
 		function displayFour() {
 			$('#questionBody').text(qBank[3].q4);
-			$('#A').text(qBank[3].answers[0]);
-			$('#B').text(qBank[3].answers[1]);
-			$('#C').text(qBank[3].answers[2]);
-			$('#D').text(qBank[3].answers[3]);
+			$('#answer1').text(qBank[3].answers[0]);
+			$('#answer2').text(qBank[3].answers[1]);
+			$('#answer3').text(qBank[3].answers[2]);
+			$('#answer4').text(qBank[3].answers[3]);
 			$('#questionImage').attr('src', './assets/images/blood.jpg');
-
-			answerListener();
-		}
+		},
 	];
-	
+
 	displayArray[i]();
 	setTimer();
+	answerListener();
+	scoreBoard();
 });
 
 

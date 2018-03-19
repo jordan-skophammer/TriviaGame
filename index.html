@@ -17,48 +17,50 @@
 		</section>
 
 		<section id="quizBody" class="row center-align">
-			<section class="row">
+			<section class="row scoreBoard">
 				<head class="col m12">
 					<h4>Time Remaining: <div id="timer"></div> Seconds</h4>
 				</head>
-				<br>
+			</section>
+			<br>
+		
+
+			<section class="row">
 				<body class="col m12">
-					<h3><div id="questionBody"></div><!-- <h4>What was the pervious name of NBA All of Famer Kareen Abdul Jabar?</h4> --></h3>
+					<h3><div id="questionBody"></div></h3>
 				</body>
 			</section>
 			<br>
 			<section class="row">
-				<form class="col m12" action="#">
-				
-					<input class="with-gap" name="multiAnswers" type="radio" id="answer1" />
-					<label id="A" for="answer1">Answer_1</label>
+				<form class="col m12">
+
+					<button id="answer1" name="buttonList" class="btn waves-effect waves-light">Answer1</button>
 					
-				
-					<input class="with-gap" name="multiAnswers" type="radio" id="answer2" />
-					<label id="B" for="answer2">Answer_2</label>
+					<button id="answer2" name="buttonList" class="btn waves-effect waves-light">Answer2</button>
 					
-				
-					<input class="with-gap" name="multiAnswers" type="radio" id="answer3" />
-					<label id="C" for="answer3">Answer_3</label>
+					<button id="answer3" name="buttonList" class="btn waves-effects waves-light">Answer3</button>
 					
-				
-					<input class="with-gap" name="multiAnswers" type="radio" id="answer4" />
-					<label id="D" for="answer4">Answer_4</label>
+					<button id="answer4" name="buttonList" class="btn waves-effects waves-light">Answer4</button>
 					
 				</form>
 			</section>
-			<section class="row">
+
+			<section class="row center-align">
 				<img id="questionImage">
+
+				<aside class="col m6">
+					<h4>Score<br>
+						Correct: <div id="displayCorrect"></div>
+						Incorrect: <div id="displayIncorrect"></div>
+					</h4>
+				</aside>
 			</section>
 		</section>
 	
 	</main>
 	
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
 </html>		
