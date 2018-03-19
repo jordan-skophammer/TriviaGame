@@ -69,7 +69,7 @@ $(document).ready(function(){
 
 	function clearButtons() {
 		$('#answer1').off("click");
-	}
+	};
 
 	function checkAnswer(n) {
 		if (questionOne.answers[n] === questionOne.key) {
@@ -85,14 +85,14 @@ $(document).ready(function(){
 			displayArray[i]()
 			timer = 15;
 		}
-	}
+	};
 
 	function scoreBoard() {
 
 	$('#displayCorrect').text(correctPoints);
 	$('#displayIncorrect').text(missedPoints);
 
-	}
+	};
 
 	var displayArray = [
 
