@@ -84,7 +84,7 @@ $(document).ready(function(){
 			i++
 			displayArray[i]()
 			timer = 15;
-		}
+		};
 	};
 
 	function scoreBoard() {
